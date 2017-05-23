@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">FingerprintLock</string>
+    <string name="app_name">指纹锁</string>
+    <string name="description">指纹锁</string>
 </resources>
