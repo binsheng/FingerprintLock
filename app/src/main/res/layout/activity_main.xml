@@ -16,16 +16,9 @@
         android:onClick="activeDevicePoliceManager"
         android:text="激活设备"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/btn_unactive"
-        tools:layout_editor_absoluteY="461dp" />
+        tools:layout_editor_absoluteY="461dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent" />
 
-    <Button
-        android:id="@+id/btn_unactive"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:onClick="unActiveDevicePolieManager"
-        android:text="取消激活"
-        app:layout_constraintLeft_toRightOf="@+id/btn_active"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="461dp" />
 </android.support.constraint.ConstraintLayout>

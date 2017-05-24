@@ -1,5 +1,6 @@
 package com.dev.bins.fingerprintlock.ui
 
+import android.app.Activity
 import android.app.admin.DevicePolicyManager
 import android.content.Context
 import android.support.v7.app.AppCompatActivity
@@ -9,6 +10,7 @@ import com.dev.bins.fingerprintlock.R
 import android.content.Intent
 import android.content.ComponentName
 import android.view.View
+import android.widget.Toast
 import com.dev.bins.fingerprintlock.Admin
 
 
@@ -25,6 +27,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private val REQUEST_DPM: Int = 0
+
     fun activeDevicePoliceManager(view:View){
         val intent = Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN)
 
@@ -34,12 +38,14 @@ class MainActivity : AppCompatActivity() {
         //描述(additional explanation)
         intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION, "激活指纹锁")
 
-        startActivityForResult(intent, 0)
+        startActivityForResult(intent, REQUEST_DPM)
     }
 
-    fun unActiveDevicePolieManager(view:View){
-        if(mDPM!!.isAdminActive(mComponent)){
-            mDPM!!.removeActiveAdmin(mComponent)
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_DPM && resultCode == Activity.RESULT_OK){
+            Toast.makeText(this,"激活成功",Toast.LENGTH_SHORT)
         }
     }
 
