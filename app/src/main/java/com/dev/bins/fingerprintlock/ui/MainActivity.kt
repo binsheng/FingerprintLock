@@ -46,6 +46,8 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == REQUEST_DPM && resultCode == Activity.RESULT_OK){
             Toast.makeText(this,"激活成功",Toast.LENGTH_SHORT)
+            startActivity(Intent(this,SetPasswordActivity::class.java))
+            finish()
         }
     }
 

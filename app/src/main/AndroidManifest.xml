@@ -13,8 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.AuthenticateActivity"
-            android:launchMode="singleInstance">
-        </activity>
+            android:launchMode="singleInstance" />
 
         <receiver
             android:name=".Admin"
@@ -31,6 +30,9 @@
         </receiver>
 
         <activity android:name=".ui.MainActivity">
+        </activity>
+        <activity android:name=".ui.SetPasswordActivity" />
+        <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
